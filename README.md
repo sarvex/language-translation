@@ -20,20 +20,20 @@ This project demonstrates a **graph-based approach to neural machine translation
 ```plaintext
 language_translation_with_spektral/
 ├── data/
-│   ├── train.csv         # WMT14 training dataset
-│   ├── test.csv          # WMT14 test dataset
+│   ├── train.csv               # WMT14 training dataset
+│   ├── test.csv                # WMT14 test dataset
 ├── src/
-│   ├── preprocess.py          # Preprocessing, graph creation, tokenization
-│   ├── encoder.py         # GNN encoder implementation
-│   ├── model.py       # Combined GNN-Seq2Seq model
-│   ├── train.py               # Training script
-│   ├── infer.py               # Inference script
-│   ├── evaluate.py            # BLEU and METEOR evaluation
-│   ├── utils.py               # Utilities (e.g., positional encodings)
+│   ├── preprocess.py           # Preprocessing, graph creation, tokenization
+│   ├── encoder.py              # GNN encoder implementation
+│   ├── model.py                # Combined GNN-Seq2Seq model
+│   ├── train.py                # Training script
+│   ├── infer.py                # Inference script
+│   ├── evaluate.py             # BLEU and METEOR evaluation
+│   ├── utils.py                # Utilities (e.g., positional encodings)
 ├── models/
-│   ├── wmt14.model            # SentencePiece tokenizer model
-│   ├── fine_tuned_model.h5    # Trained model weights
-├── README.md                  # Project description
+│   ├── wmt14.model             # SentencePiece tokenizer model
+│   ├── fine_tuned_model.h5     # Trained model weights
+├── README.md                   # Project description
 ```
 
 ---
@@ -44,7 +44,7 @@ language_translation_with_spektral/
 
 ```bash
 git clone https://github.com/sarvex/language-translation
-cd language_translation_with_spektral
+cd language-translation
 ```
 
 ### **2. Install Dependencies**
