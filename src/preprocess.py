@@ -67,22 +67,44 @@ def preprocess_wmt14(language_pair, max_samples=None, vocab_size=8000, tokenizer
     )
 
     # Load tokenizer
-    tokenizer = spm.SentencePieceProcessor(model_file=f"{tokenizer_prefix}.model")
+    sp = spm.SentencePieceProcessor(model_file=f"{tokenizer_prefix}.model")
 
-    # Tokenize texts
-    source_sequences = [tokenizer.encode(text) for text in source_texts]
-    target_sequences = [tokenizer.encode(text) for text in target_texts]
-
-    # Convert source texts to graphs
-    source_graphs = [sentence_to_graph(text) for text in source_texts]
-
-    # Save processed data as a DataFrame
-    data = pd.DataFrame({
+    # Create source and target sequences
+    source_sequences = []
+    target_sequences = []
+    source_graphs = []
+    
+    # Process each sentence pair
+    for src_text, tgt_text in zip(source_texts, target_texts):
+        # Create graph for source sentence
+        source_graph = sentence_to_graph(src_text)
+        source_graphs.append(source_graph)
+        
+        # Tokenize source and target
+        source_seq = sp.encode_as_ids(src_text)
+        target_seq = sp.encode_as_ids(tgt_text)
+        
+        source_sequences.append(source_seq)
+        target_sequences.append(target_seq)
+    
+    # Find maximum sequence length
+    max_source_len = max(len(seq) for seq in source_sequences)
+    max_target_len = max(len(seq) for seq in target_sequences)
+    
+    # Pad sequences
+    padded_source_sequences = [
+        seq + [0] * (max_source_len - len(seq)) for seq in source_sequences
+    ]
+    padded_target_sequences = [
+        seq + [0] * (max_target_len - len(seq)) for seq in target_sequences
+    ]
+    
+    return {
         "source_graphs": source_graphs,
-        "source_sequences": source_sequences,
-        "target_sequences": target_sequences
-    })
-    return data
+        "source_sequences": np.array(padded_source_sequences),
+        "target_sequences": np.array(padded_target_sequences),
+        "tokenizer": sp
+    }
 
 # Example usage:
 # wmt_data = preprocess_wmt14(("en", "fr"), max_samples=10000)
