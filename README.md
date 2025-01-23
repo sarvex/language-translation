@@ -18,7 +18,7 @@ This project demonstrates a **graph-based approach to neural machine translation
 ## **Directory Structure**
 
 ```plaintext
-language_translation_with_spektral/
+language-translation/
 ├── data/
 │   ├── train.csv               # WMT14 training dataset
 │   ├── test.csv                # WMT14 test dataset
