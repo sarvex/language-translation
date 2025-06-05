@@ -199,7 +199,7 @@ threadpoolctl==3.5.0
 tinycss2==1.4.0
 tokenizers==0.21.0
 tomli==2.2.1
-torch==2.5.1
+torch==2.7.1
 torchdata==0.10.1
 torchtext==0.18.0
 tornado==6.4.2
