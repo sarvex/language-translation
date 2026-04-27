@@ -46,7 +46,7 @@ executing==2.1.0
 fastjsonschema==2.21.1
 filelock==3.16.1
 flatbuffers==25.1.21
-fonttools==4.55.4
+fonttools==4.60.2
 fqdn==1.5.1
 frozenlist==1.5.0
 fsspec==2024.9.0
