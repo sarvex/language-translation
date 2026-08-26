@@ -16,7 +16,7 @@ async-timeout==5.0.1
 attrs==24.3.0
 babel==2.16.0
 beautifulsoup4==4.12.3
-bleach==6.2.0
+bleach==6.4.0
 blis==1.2.0
 catalogue==2.0.10
 causal-learn==0.1.4.0
