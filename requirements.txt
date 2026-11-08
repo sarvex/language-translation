@@ -172,7 +172,7 @@ scikit-learn==1.6.1
 scipy==1.13.1
 scs==3.2.7.post2
 Send2Trash==1.8.3
-sentencepiece==0.2.0
+sentencepiece==0.2.1
 shellingham==1.5.4
 six @ file:///AppleInternal/Library/BuildRoots/2c89a47b-9dd5-11ef-938f-6e654a286000/Library/Caches/com.apple.xbs/Sources/python3/six-1.15.0-py2.py3-none-any.whl
 smart-open==7.1.0
